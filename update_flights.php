@@ -13,7 +13,7 @@
 }
 
 if (isset($_GET['red_id'])) {
-	$sql_select = "SELECT ID_Flights, Destination, Departure_Time, ID_Plane FROM flights WHERE iID_Flights = {$_GET['red_id']}";
+	$sql_select = "SELECT ID_Flights, Destination, Departure_Time, ID_Plane FROM flights WHERE ID_Flights = {$_GET['red_id']}";
 	$result_select = mysqli_query($link, $sql_select);
 	$row = mysqli_fetch_array($result_select);
 }
