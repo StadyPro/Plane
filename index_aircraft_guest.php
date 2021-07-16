@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Редактирование</title>
+	<title>Самолеты</title>
 </head>
 <body>
 
@@ -30,3 +30,6 @@ $result_sql = mysqli_query($link, $sql);
 	}
 	echo '</table>';
 ?>
+<form action="guest.php" method="POST">
+	<input type="submit" value="Вернуться назад">
+</form>

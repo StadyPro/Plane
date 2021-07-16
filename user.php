@@ -25,5 +25,8 @@
     <form action="index_tickets.php" method="post">
 		<input type="submit" name="connect" value="Билеты">
     </form>
+		<form action="index.php" method="POST">
+			<input type="submit" value="Вернуться назад">
+		</form>
 </body>
 </html>
