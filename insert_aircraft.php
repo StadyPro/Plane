@@ -26,7 +26,7 @@ if (isset($ID_Aircraft) && isset($Type) && isset($Number_Seats))
 	<title>Добавление в таблицу данных aircraft</title>
 </head>
 <body>
-	<form action="header.php" method="post">
+	<form action="index_aircraft_admin.php" method="post">
 		<input type="submit" value="Вернуться назад">
 	</form>
 </body>
