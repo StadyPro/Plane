@@ -6,7 +6,7 @@ $Number_Seats = htmlentities(trim($_POST['Number_Seats']));
 
 if (isset($ID_Aircraft) && isset($Type) && isset($Number_Seats))
 {
-	$sql = "INSERT INTO aircraft (ID_Aircraft, Type, Number_Seats) VALUES ('$ID_Aircraft','$Type','$Number_Seats')";
+	$sql = "INSERT INTO `aircraft` (`ID_Aircraft`, `Type`, `Number_Seats`) VALUES ('$ID_Aircraft','$Type','$Number_Seats')";
 	$result = mysqli_query($link, $sql);
 	if($result)
 	{
