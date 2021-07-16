@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include('conn.php');
+	include('connect.php');
 	 $login = stripslashes(htmlspecialchars(trim($_POST['login'])));
 	 $pass = trim($_POST['pass']);
 	 if (!empty($login) && !empty($pass))
