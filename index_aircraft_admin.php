@@ -77,7 +77,7 @@ $result_sql = mysqli_query($link, $sql);
 		echo '<tr>'.
 				"<td> {$row['ID_Aircraft']} </td>".
 				"<td> {$row['Type']} </td>".
-				"<td><a href='?del_id={$row['ID_Aircraft']}'>Удадить</a> </td>".
+				"<td><a href='index_aircraft_admin.php?del_id={$row['ID_Aircraft']}'>Удадить</a> </td>".
 				"<td><a href='update_aircraft.php?red_id={$row['ID_Aircraft']}'>Изменить</a></td>".
 				'</tr>';
 	}
@@ -93,7 +93,7 @@ $result_sql = mysqli_query($link, $sql);
 		echo '<tr>' .
 		"<td> {$row1['ID_Aircraft']} </td>" .
 		"<td> {$row1['Type']}</td>".
-            "<td><a href='?del_id={$row1['ID_Aircraft']}'>Удадить</a> </td>".
+            "<td><a href='index_aircraft_admin.php?del_id={$row1['ID_Aircraft']}'>Удадить</a> </td>".
 				"<td><a href='update_aircraft.php?red_id={$row1['ID_Aircraft']}'>Изменить</a></td>".
 		'</tr>';
 	}

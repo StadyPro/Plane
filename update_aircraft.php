@@ -44,7 +44,7 @@ if (isset($_GET['red_id'])) {
 			</tr>
 		</table>
 	</form>
-	<form action="header.php" method="POST">
+	<form action="index_aircraft_admin.php" method="POST">
 		<input type="submit" value="Вернуться назад">
 	</form>
 </body>
