@@ -88,6 +88,8 @@ $result_sql = mysqli_query($link, $sql);
 	'<tr>'.
 	'<td>Код самолета</td>'.
 	'<td>Тип самолета</td>'.
+	'<td>Удаление</td>'.
+	'<td>Редактирование</td>'.
 	'</tr>';
 	while ($row1 = mysqli_fetch_array($res)) {
 		echo '<tr>' .
