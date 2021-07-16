@@ -18,6 +18,7 @@
 <html>
 
 <head>
+		<link rel="stylesheet" type="text/css" href="style.css">
     <title>Редактирование</title>
 </head>
 <body>
