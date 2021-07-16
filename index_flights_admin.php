@@ -64,14 +64,14 @@ $poisk = $_POST['poisk'];
 $reser = $_POST['reset'];
 if (empty($poisk))
 {
-$sql = "SELECT * FROM flights $sorting_sql";
+$sql = "SELECT ID_Flights,Destination,Departure_Time,Type FROM flights, aircraft WHERE ID_Plane=ID_Aircraft $sorting_sql";
 $result_sql = mysqli_query($link, $sql);
 	echo '<table border=1>'.
 	'<tr>'.
 	'<td>Код рейса</td>'.
 	'<td>Место назначения</td>'.
 	'<td>Время вылета</td>'.
-	'<td>Код самолета</td>'.
+	'<td>Тип самолета</td>'.
         '<td>Удаление</td>'.
         '<td>Редактирование</td>'.
 	'</tr>';
@@ -80,20 +80,21 @@ $result_sql = mysqli_query($link, $sql);
 				"<td> {$row['ID_Flights']} </td>".
 				"<td> {$row['Destination']} </td>".
 				"<td> {$row['Departure_Time']} </td>".
-				"<td> {$row['ID_Plane']} </td>".
+				"<td> {$row['Type']} </td>".
 				"<td><a href='index_flights_admin.php?del_id={$row['ID_Flights']}'>Удадить</a> </td>".
 				"<td><a href='update_flights.php?red_id={$row['ID_Flights']}'>Изменить</a></td>".
 				'</tr>';
 	}
 	echo '</table>';
 } else {
-	$sqllike = "SELECT * FROM flights WHERE ID_Flights LIKE '%$poisk%' OR Destination LIKE '%$poisk%'";
+	$sqllike = "SELECT ID_Flights,Destination,Departure_Time,Type FROM flights, aircraft WHERE ID_Plane=ID_Aircraft AND ID_Flights LIKE '%$poisk%' OR Destination LIKE '%$poisk%'
+	OR Departure_Time LIKE '%$poisk%' OR Type LIKE '%$poisk%'";
 	$res = mysqli_query($link, $sqllike); echo '<table border=1>'.
 	'<tr>'.
 	'<td>Код рейса</td>'.
 	'<td>Место назначения</td>'.
 	'<td>Время вылета</td>'.
-	'<td>Код самолета</td>'.
+	'<td>Тип самолета</td>'.
   '<td>Удаление</td>'.
   '<td>Редактирование</td>'.
 	'</tr>';
@@ -102,7 +103,7 @@ $result_sql = mysqli_query($link, $sql);
 		"<td> {$row1['ID_Flights']} </td>" .
 		"<td> {$row1['Destination']}</td>".
 		"<td> {$row1['Departure_Time']} </td>".
-		"<td> {$row1['ID_Plane']} </td>".
+		"<td> {$row1['Type']} </td>".
             "<td><a href='index_flights_admin.php?del_id={$row1['ID_Flights']}'>Удадить</a> </td>".
 				"<td><a href='update_flights.php?red_id={$row1['ID_Flights']}'>Изменить</a></td>".
 		'</tr>';
