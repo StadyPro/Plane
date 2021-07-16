@@ -33,7 +33,7 @@ if (isset($_GET['red_id'])) {
 			</tr>
 			<tr>
 			<td>Время отправления</td>
-			<td><input type="text" name="Departure_Time" value="<?=isset($_GET['red_id']) ? $row['Departure_Time'] : ''; ?>"></td>
+			<td><input type="time" name="Departure_Time" value="<?=isset($_GET['red_id']) ? $row['Departure_Time'] : ''; ?>"></td>
 			</tr>
 			<tr>
 			<td>Код самолета</td>

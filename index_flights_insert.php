@@ -18,7 +18,7 @@
 			</tr>
 			<tr>
 				<td>Введите время вылета</td>
-				<td><input type="text" name="Departure_Time"></td>
+				<td><input type="time" name="Departure_Time"></td>
 			</tr>
 			<tr>
 				<td>Введите id самолета</td>
