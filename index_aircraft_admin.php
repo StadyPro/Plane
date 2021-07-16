@@ -35,7 +35,7 @@
         <li><a href="index_aircraft_admin.php?sort=Type_aircraft-desc">Тип самолета от Я до А</a></li>
         <li><a href="index_aircraft_admin.php?sort=default">Тип самолета по умолчанию</a></li>
     </ul>
-    <form action="index_aircraft_insert.php" method="post">
+    <form action="index_admin.php" method="post">
         <input type="submit" name="connect" value="Добавить">
     </form>
 </body>
