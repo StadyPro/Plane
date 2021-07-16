@@ -20,6 +20,15 @@
 	<title>Редактирование</title>
 </head>
 <body>
+  <form method="post">
+   <table>
+     <tr>
+       <td> Поле для поиска </td>
+       <td><input	type="text"	name="poisk" value="<?=$_POST['poisk']; ?>"></td>
+       <td><input type="submit" name="submit" value="ОК"></td>
+     </tr>
+   </table>
+ </form>
 <ul>
 	<li><a href="index_flights_admin.php?sort=Destination-asc">Место назначения от А до Я</a></li>
 	<li><a href="index_flights_admin.php?sort=Destination-desc">Место назначения от Я до А</a></li>
