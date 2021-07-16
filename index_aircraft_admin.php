@@ -38,6 +38,9 @@
     <form action="index_admin.php" method="post">
         <input type="submit" name="connect" value="Добавить">
     </form>
+    <form action="header.php" method="POST">
+  		<input type="submit" value="Вернуться назад">
+  	</form>
 </body>
 
 </html>

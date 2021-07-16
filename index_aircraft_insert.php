@@ -10,7 +10,7 @@
 		<table>
       <tr>
         <td>Введите код самолета</td>
-        <td><input type="text" name="ID_Aircraft "></td>
+        <td><input type="text" name="ID_Aircraft"></td>
       </tr>
 			<tr>
 				<td>Введите тип самолета</td>
