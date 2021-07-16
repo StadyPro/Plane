@@ -13,7 +13,7 @@
 				<td><input type="text" name="Type"></td>
 			</tr>
 			<tr>
-				<td>Введите количество мест/td>
+				<td>Введите количество мест</td>
 				<td><input type="text" name="Number_Seats"></td>
 			</tr>
 			<tr>
