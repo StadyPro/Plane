@@ -21,7 +21,7 @@
 				<td><input type="time" name="Departure_Time"></td>
 			</tr>
 			<tr>
-				<td>Введите id самолета</td>
+				<td>Выберете тип самолета</td>
 				<td><select name="ID_Plane">
 					<?php
 					include 'connect.php';

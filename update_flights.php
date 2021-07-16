@@ -36,8 +36,20 @@ if (isset($_GET['red_id'])) {
 			<td><input type="time" name="Departure_Time" value="<?=isset($_GET['red_id']) ? $row['Departure_Time'] : ''; ?>"></td>
 			</tr>
 			<tr>
-			<td>Тип самолета</td>
-			<td><input type="text" name="Type" value="<?=isset($_GET['red_id']) ? $row['ID_Plane'] : ''; ?>"></td>
+				<td>Выберете тип самолета</td>
+				<td><select name="ID_Plane">
+					<?php
+					include 'connect.php';
+					$sql_select = "SELECT ID_Aircraft,Type FROM aircraft";
+					$result_select = mysqli_query($link, $sql_select);
+
+					while ($row = mysqli_fetch_array($result_select))
+					{
+						echo "<option value = '".$row['ID_Aircraft']."'>".$row['Type']."</option>";
+					}
+					?>
+				</select>
+			</td>
 			</tr>
 			<tr>
 				<td colspan="2">
