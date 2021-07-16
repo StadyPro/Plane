@@ -13,16 +13,16 @@
 	<title>Добавление в таблицу данных</title>
 </head>
 <body>
-	<form action="index_aircraft.php" method="post">
+	<form action="index_aircraft_admin.php" method="post">
 		<input type="submit" name="connect" value="Самолеты">
     </form>
-    <form action="index_flights.php" method="post">
+    <form action="index_flights_admin.php" method="post">
 		<input type="submit" name="connect" value="Рейсы">
     </form>
-    <form action="index_passengers.php" method="post">
+    <form action="index_passengers_admin.php" method="post">
 		<input type="submit" name="connect" value="Пассажиры">
     </form>
-    <form action="index_tickets.php" method="post">
+    <form action="index_tickets_admin.php" method="post">
 		<input type="submit" name="connect" value="Билеты">
     </form>
 </body>
