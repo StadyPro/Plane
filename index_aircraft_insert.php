@@ -8,6 +8,10 @@
 	<h1>Добавление данных в таблицу aircraft</h1>
 	<form action="insert_aircraft.php" method="post" name="action">
 		<table>
+      <tr>
+        <td>Введите код самолета</td>
+        <td><input type="text" name="ID_Aircraft "></td>
+      </tr>
 			<tr>
 				<td>Введите тип самолета</td>
 				<td><input type="text" name="Type"></td>
