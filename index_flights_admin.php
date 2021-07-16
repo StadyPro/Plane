@@ -88,13 +88,15 @@ $result_sql = mysqli_query($link, $sql);
 	'<tr>'.
 	'<td>Код рейса</td>'.
 	'<td>Место назначения</td>'.
+  '<td>Удаление</td>'.
+  '<td>Редактирование</td>'.
 	'</tr>';
 	while ($row1 = mysqli_fetch_array($res)) {
 		echo '<tr>' .
 		"<td> {$row1['ID_Flights']} </td>" .
 		"<td> {$row1['Destination']}</td>".
             "<td><a href='index_flights_admin.php?del_id={$row1['ID_Flights']}'>Удадить</a> </td>".
-				"<td><a href='update_flights.php?red_id={$row1['ID_Aircraft']}'>Изменить</a></td>".
+				"<td><a href='update_flights.php?red_id={$row1['ID_Flights']}'>Изменить</a></td>".
 		'</tr>';
 	}
 	echo '</table>';
