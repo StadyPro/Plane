@@ -52,7 +52,7 @@
 				<td><input type="text" name="Price"></td>
 			</tr><tr>
 				<td>Введите дату вылета</td>
-				<td><input type="text" name="Departure_Date"></td>
+				<td><input type="date" name="Departure_Date"></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Добавить данные">
