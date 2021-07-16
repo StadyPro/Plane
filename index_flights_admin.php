@@ -70,6 +70,8 @@ $result_sql = mysqli_query($link, $sql);
 	'<tr>'.
 	'<td>Код рейса</td>'.
 	'<td>Место назначения</td>'.
+	'<td>Время вылета</td>'.
+	'<td>Код самолета</td>'.
         '<td>Удаление</td>'.
         '<td>Редактирование</td>'.
 	'</tr>';
@@ -77,6 +79,8 @@ $result_sql = mysqli_query($link, $sql);
 		echo '<tr>'.
 				"<td> {$row['ID_Flights']} </td>".
 				"<td> {$row['Destination']} </td>".
+				"<td> {$row['Departure_Time']} </td>".
+				"<td> {$row['ID_Plane']} </td>".
 				"<td><a href='index_flights_admin.php?del_id={$row['ID_Flights']}'>Удадить</a> </td>".
 				"<td><a href='update_flights.php?red_id={$row['ID_Flights']}'>Изменить</a></td>".
 				'</tr>';
@@ -88,6 +92,8 @@ $result_sql = mysqli_query($link, $sql);
 	'<tr>'.
 	'<td>Код рейса</td>'.
 	'<td>Место назначения</td>'.
+	'<td>Время вылета</td>'.
+	'<td>Код самолета</td>'.
   '<td>Удаление</td>'.
   '<td>Редактирование</td>'.
 	'</tr>';
@@ -95,6 +101,8 @@ $result_sql = mysqli_query($link, $sql);
 		echo '<tr>' .
 		"<td> {$row1['ID_Flights']} </td>" .
 		"<td> {$row1['Destination']}</td>".
+		"<td> {$row1['Departure_Time']} </td>".
+		"<td> {$row1['ID_Plane']} </td>".
             "<td><a href='index_flights_admin.php?del_id={$row1['ID_Flights']}'>Удадить</a> </td>".
 				"<td><a href='update_flights.php?red_id={$row1['ID_Flights']}'>Изменить</a></td>".
 		'</tr>';
