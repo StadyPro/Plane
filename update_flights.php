@@ -37,6 +37,19 @@ if (isset($_GET['red_id'])) {
 			</tr>
 			<tr>
 				<td>Выберете тип самолета</td>
+				<td><select name='ID_Plane'>";
+					<?php
+				    include 'connect.php';
+						$query1='SELECT ID_Aircraft ,Type FROM aircraft';
+				    $id_dolgnosti = $row['ID_Aircraft'];
+				    $res = mysql_query($query1);
+						while($row = mysql_fetch_assoc($res)){
+							echo '<option value="'.$row['ID_Aircraft'].'"'.($row['ID_Aircraft']==$id_dolgnosti?' selected':'').'>'.$row['Type'].'</option>;';
+						}
+						?>
+					</select>
+					</td>
+
 				<td><select name="ID_Plane">
 					<?php
 					include 'connect.php';
@@ -45,11 +58,14 @@ if (isset($_GET['red_id'])) {
 
 					while ($row = mysqli_fetch_array($result_select))
 					{
-						echo "<option value = '".$row['ID_Aircraft']."'>".$row['Type']."</option>";
+							echo "<option value = '".$row['ID_Plane']."'>".$row['Type']."</option>";
 					}
 					?>
 				</select>
 			</td>
+
+
+
 			</tr>
 			<tr>
 				<td colspan="2">
