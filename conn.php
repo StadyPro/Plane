@@ -2,7 +2,7 @@
 $host='localhost';
     $user='root';
     $password='root';
-    $db='pizza';
+    $db='flights';
 
     $link=mysqli_connect($host,$user,$password,$db);
  ?>
