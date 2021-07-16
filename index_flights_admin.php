@@ -83,7 +83,7 @@ $result_sql = mysqli_query($link, $sql);
 	}
 	echo '</table>';
 } else {
-	$sqllike = "SELECT * FROM flights WHERE ID_Flights LIKE '%$poisk%' OR Type LIKE '%$poisk%'";
+	$sqllike = "SELECT * FROM flights WHERE ID_Flights LIKE '%$poisk%' OR Destination LIKE '%$poisk%'";
 	$res = mysqli_query($link, $sqllike); echo '<table border=1>'.
 	'<tr>'.
 	'<td>Код рейса</td>'.
