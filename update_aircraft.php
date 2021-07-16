@@ -29,12 +29,12 @@ if (isset($_GET['red_id'])) {
 		<table>
 			<tr>
 			<td>Тип самолета</td>
-			<td><input type="text" name="name" value="<?=isset($_GET['red_id']) ? $row['name'] : ''; ?>">
+			<td><input type="text" name="Type" value="<?=isset($_GET['red_id']) ? $row['Type'] : ''; ?>">
 			</td>
 			</tr>
 			<tr>
 			<td>Количество мест</td>
-			<td><input type="text" name="telephone" value="<?=isset($_GET['red_id']) ? $row['telephone'] : ''; ?>">
+			<td><input type="text" name="Number_Seats" value="<?=isset($_GET['red_id']) ? $row['Number_Seats'] : ''; ?>">
 			</td>
 			</tr>
 			<tr>
