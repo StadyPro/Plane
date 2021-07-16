@@ -16,63 +16,87 @@
  ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Редактирование</title>
+    <title>Редактирование</title>
 </head>
 <body>
-  <form method="post">
-   <table>
-     <tr>
-       <td> Поле для поиска </td>
-       <td><input	type="text"	name="poisk" value="<?=$_POST['poisk']; ?>"></td>
-       <td><input type="submit" name="submit" value="ОК"></td>
-     </tr>
-   </table>
- </form>
-<ul>
-	<li><a href="index_flights_admin.php?sort=Destination-asc">Место назначения от А до Я</a></li>
-	<li><a href="index_flights_admin.php?sort=Destination-desc">Место назначения от Я до А</a></li>
-	<li><a href="index_flights_admin.php?sort=default">Место назначения по умолчанию</a></li>
-</ul>
-	<form action="index_flights_insert.php" method="post">
-		<input type="submit" name="connect" value="Добавить">
+   <form method="post">
+		<table>
+			<tr>
+				<td> Поле для поиска </td>
+				<td><input	type="text"	name="poisk" value="<?=$_POST['poisk']; ?>"></td>
+				<td><input type="submit" name="submit" value="ОК"></td>
+			</tr>
+		</table>
+	</form>
+    <ul>
+        <li><a href="index_flights_admin.php?sort=Destination_aircraft-asc">Место назначения от А до Я</a></li>
+        <li><a href="index_flights_admin.php?sort=Destination_aircraft-desc">Место назначения от Я до А</a></li>
+        <li><a href="index_flights_admin.php?sort=default">Место назначения по умолчанию</a></li>
+    </ul>
+    <form action="index_flights_insert.php" method="post">
+        <input type="submit" name="connect" value="Добавить">
     </form>
+    <form action="admin.php" method="POST">
+  		<input type="submit" value="Вернуться назад">
+  	</form>
 </body>
+
 </html>
 <?php
 include 'connect.php';
+
 $sorting = $_GET['sort'];
 
+
 switch ($sorting) {
-	case 'Destination-asc':
+	case 'Destination_aircraft-asc':
 		$sorting_sql = 'ORDER BY Destination ASC';
 		break;
-	case 'Destination-desc':
+	case 'Destination_aircraft-desc':
 		$sorting_sql = 'ORDER BY Destination DESC';
 		break;
 	case 'default':
 		$sorting_sql = '';
 }
+$poisk = $_POST['poisk'];
+$reser = $_POST['reset'];
+if (empty($poisk))
+{
 $sql = "SELECT * FROM flights $sorting_sql";
 $result_sql = mysqli_query($link, $sql);
 	echo '<table border=1>'.
 	'<tr>'.
-	"<td>Код рейса</td>".
-			"<td>Место назначения</td>".
-			"<td>Время отправления</td>".
-			"<td>Код самолета</td>".
-			"<td>Удаление</td>".
-		    "<td>Редактирование</td>".
+	'<td>Код рейса</td>'.
+	'<td>Место назначения</td>'.
+        '<td>Удаление</td>'.
+        '<td>Редактирование</td>'.
 	'</tr>';
 	while ($row = mysqli_fetch_array($result_sql)) {
 		echo '<tr>'.
 				"<td> {$row['ID_Flights']} </td>".
 				"<td> {$row['Destination']} </td>".
-				"<td> {$row['Departure_Time']} </td>".
-				"<td> {$row['ID_Plane']} </td>".
-				"<td><a href='?del_id={$row['ID_Flights']}'>Удадить</a> </td>".
+				"<td><a href='index_flights_admin.php?del_id={$row['ID_Flights']}'>Удадить</a> </td>".
 				"<td><a href='update_flights.php?red_id={$row['ID_Flights']}'>Изменить</a></td>".
 				'</tr>';
 	}
 	echo '</table>';
+} else {
+	$sqllike = "SELECT * FROM flights WHERE ID_Flights LIKE '%$poisk%' OR Type LIKE '%$poisk%'";
+	$res = mysqli_query($link, $sqllike); echo '<table border=1>'.
+	'<tr>'.
+	'<td>Код рейса</td>'.
+	'<td>Место назначения</td>'.
+	'</tr>';
+	while ($row1 = mysqli_fetch_array($res)) {
+		echo '<tr>' .
+		"<td> {$row1['ID_Flights']} </td>" .
+		"<td> {$row1['Destination']}</td>".
+            "<td><a href='index_flights_admin.php?del_id={$row1['ID_Flights']}'>Удадить</a> </td>".
+				"<td><a href='update_flights.php?red_id={$row1['ID_Aircraft']}'>Изменить</a></td>".
+		'</tr>';
+	}
+	echo '</table>';
+}
 ?>
