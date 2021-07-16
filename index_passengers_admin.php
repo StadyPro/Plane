@@ -38,9 +38,6 @@
     <form action="index_passengers_insert.php" method="post">
         <input type="submit" name="connect" value="Добавить">
     </form>
-    <form action="admin.php" method="POST">
-  		<input type="submit" value="Вернуться назад">
-  	</form>
 </body>
 
 </html>
@@ -114,3 +111,6 @@ $result_sql = mysqli_query($link, $sql);
 	echo '</table>';
 }
 ?>
+<form action="admin.php" method="POST">
+	<input type="submit" value="Вернуться назад">
+</form>

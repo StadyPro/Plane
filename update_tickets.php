@@ -17,7 +17,7 @@
 }
 
 if (isset($_GET['red_id'])) {
-	$sql_select = "SELECT ID_Ticket, ID_Flight, ID_Passenger,  Place_Number, Price, Departure_Date FROM tickets WHERE ID_Flight = {$_GET['red_id']}";
+	$sql_select = "SELECT ID_Ticket, Destination, Surname, Place_Number, Price, Departure_Date FROM tickets,flights,passengers WHERE ID_Flights=ID_Flight AND ID_Passenger=ID_Passengers AND ID_Flight = {$_GET['red_id']}";
 	$result_select = mysqli_query($link, $sql_select);
 	$row = mysqli_fetch_array($result_select);
 }
@@ -36,12 +36,12 @@ if (isset($_GET['red_id'])) {
 			<td><input type="text" name="ID_Ticket" value="<?=isset($_GET['red_id']) ? $row['ID_Ticket'] : ''; ?>"></td>
 			</tr>
 			<tr>
-				<td>Код рейса</td>
-			<td><input type="text" name="ID_Flight" value="<?=isset($_GET['red_id']) ? $row['ID_Flight'] : ''; ?>"></td>
+				<td>Место прибытия</td>
+			<td><input type="text" name="Destination" value="<?=isset($_GET['red_id']) ? $row['Destination'] : ''; ?>"></td>
 			</tr>
 			<tr>
-				<td>Код пассажира</td>
-			<td><input type="text" name="ID_Passenger" value="<?=isset($_GET['red_id']) ? $row['ID_Passenger'] : ''; ?>"></td>
+				<td>Фамилия пассажира</td>
+			<td><input type="text" name="Surname" value="<?=isset($_GET['red_id']) ? $row['Surname'] : ''; ?>"></td>
 			</tr>
 			<tr>
 				<td>Номер места</td>

@@ -38,9 +38,6 @@
     <form action="index_flights_insert.php" method="post">
         <input type="submit" name="connect" value="Добавить">
     </form>
-    <form action="admin.php" method="POST">
-  		<input type="submit" value="Вернуться назад">
-  	</form>
 </body>
 
 </html>
@@ -87,8 +84,8 @@ $result_sql = mysqli_query($link, $sql);
 	}
 	echo '</table>';
 } else {
-	$sqllike = "SELECT ID_Flights,Destination,Departure_Time,Type FROM flights, aircraft WHERE ID_Plane=ID_Aircraft AND ID_Flights LIKE '%$poisk%' OR Destination LIKE '%$poisk%'
-	OR Departure_Time LIKE '%$poisk%' OR Type LIKE '%$poisk%'";
+	$sqllike = "SELECT ID_Flights,Destination,Departure_Time,Type FROM flights, aircraft WHERE ID_Plane=ID_Aircraft AND (ID_Flights LIKE '%$poisk%' OR Destination LIKE '%$poisk%'
+	OR Departure_Time LIKE '%$poisk%' OR Type LIKE '%$poisk%')";
 	$res = mysqli_query($link, $sqllike); echo '<table border=1>'.
 	'<tr>'.
 	'<td>Код рейса</td>'.
@@ -111,3 +108,6 @@ $result_sql = mysqli_query($link, $sql);
 	echo '</table>';
 }
 ?>
+<form action="admin.php" method="POST">
+	<input type="submit" value="Вернуться назад">
+</form>
