@@ -16,8 +16,8 @@
 		</table>
 	</form>
     <ul>
-        <li><a href="index_passengers_user.php?sort=Surname_aircraft-asc">Фамилия пассажира от А до Я</a></li>
-        <li><a href="index_passengers_user.php?sort=Surname_aircraft-desc">Фамилия пассажира от Я до А</a></li>
+        <li><a href="index_passengers_user.php?sort=Surname-asc">Фамилия пассажира от А до Я</a></li>
+        <li><a href="index_passengers_user.php?sort=Surname-desc">Фамилия пассажира от Я до А</a></li>
         <li><a href="index_passengers_user.php?sort=default">Фамилия пассажира по умолчанию</a></li>
     </ul>
 </body>
@@ -30,11 +30,11 @@ $sorting = $_GET['sort'];
 
 
 switch ($sorting) {
-	case 'Surname_aircraft-asc':
-		$sorting_sql = 'ORDER BY Type ASC';
+	case 'Surname-asc':
+		$sorting_sql = 'ORDER BY Surname ASC';
 		break;
-	case 'Surname_aircraft-desc':
-		$sorting_sql = 'ORDER BY Type DESC';
+	case 'Surname-desc':
+		$sorting_sql = 'ORDER BY Surname DESC';
 		break;
 	case 'default':
 		$sorting_sql = '';
