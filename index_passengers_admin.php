@@ -32,8 +32,8 @@
 		</table>
 	</form>
     <ul>
-        <li><a href="index_passengers_admin.php?sort=Surname_aircraft-asc">Фамилия пассажира от А до Я</a></li>
-        <li><a href="index_passengers_admin.php?sort=Surname_aircraft-desc">Фамилия пассажира от Я до А</a></li>
+        <li><a href="index_passengers_admin.php?sort=Surname-asc">Фамилия пассажира от А до Я</a></li>
+        <li><a href="index_passengers_admin.php?sort=Surname-desc">Фамилия пассажира от Я до А</a></li>
         <li><a href="index_passengers_admin.php?sort=default">Фамилия пассажира по умолчанию</a></li>
     </ul>
     <form action="index_passengers_insert.php" method="post">
@@ -49,11 +49,11 @@ $sorting = $_GET['sort'];
 
 
 switch ($sorting) {
-	case 'Surname_aircraft-asc':
-		$sorting_sql = 'ORDER BY Type ASC';
+	case 'Surname-asc':
+		$sorting_sql = 'ORDER BY Surname ASC';
 		break;
-	case 'Surname_aircraft-desc':
-		$sorting_sql = 'ORDER BY Type DESC';
+	case 'Surname-desc':
+		$sorting_sql = 'ORDER BY Surname DESC';
 		break;
 	case 'default':
 		$sorting_sql = '';
@@ -62,7 +62,7 @@ $poisk = $_POST['poisk'];
 $reser = $_POST['reset'];
 if (empty($poisk))
 {
-$sql = "SELECT * FROM passengers $sorting_sql";
+$sql = "SELECT ID_Passengers, Surname, Name, Patronymic, Passport_data FROM passengers $sorting_sql";
 $result_sql = mysqli_query($link, $sql);
 	echo '<table border=1>'.
 	'<tr>'.
